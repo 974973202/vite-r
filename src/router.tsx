@@ -8,9 +8,6 @@ import {
   IndexRouteProps,
   RouteObject,
 } from 'react-router-dom';
-// import App from './App';
-// import Index from './index';
-// import LeedCode from './leet-code';
 
 type RouteType = {
   path?: string;
@@ -27,12 +24,28 @@ const routes: Array<RouteType> = [
     children: [
       {
         index: true,
-        component: lazy(() => import('./index')),
+        component: lazy(() => import('./page/index')),
       },
-      // {
-      //   path: '/react-dnd',
-      //   component: lazy(() => import('./react-dnd')),
-      // },
+      {
+        path: '/css',
+        component: lazy(() => import('./page/css')),
+      },
+      {
+        path: '/leet-code',
+        component: lazy(() => import('./page/leet-code')),
+      },
+      {
+        path: '/drag',
+        component: lazy(() => import('./page/drag')),
+      },
+      {
+        path: '/react-memo',
+        component: lazy(() => import('./page/react-memo')),
+      },
+      {
+        path: '/use-callback',
+        component: lazy(() => import('./page/use-callback')),
+      },
     ],
   },
 ];

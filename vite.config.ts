@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteEslint from 'vite-plugin-eslint';
 import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
+import { prismjsPlugin } from 'vite-plugin-prismjs';
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -13,6 +14,10 @@ export default defineConfig({
     }),
     createStyleImportPlugin({
       resolves: [AntdResolve()],
+    }),
+    prismjsPlugin({
+      languages: ['css'],
+      //  languages: 'all',
     }),
   ],
   resolve: {

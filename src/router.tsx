@@ -46,6 +46,14 @@ const routes: Array<RouteType> = [
         path: '/use-callback',
         component: lazy(() => import('./page/use-callback')),
       },
+      {
+        path: '/wave',
+        component: lazy(() => import('./page/wave')),
+      },
+      {
+        path: '/prismjs',
+        component: lazy(() => import('./page/prismjs')),
+      },
     ],
   },
 ];

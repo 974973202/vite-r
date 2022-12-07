@@ -54,6 +54,10 @@ const routes: Array<RouteType> = [
         path: '/prismjs',
         component: lazy(() => import('./page/prismjs')),
       },
+      {
+        path: '/bytemd',
+        component: lazy(() => import('./page/bytemd')),
+      },
     ],
   },
 ];

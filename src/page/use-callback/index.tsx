@@ -23,6 +23,8 @@ function UseRefDemof() {
     textRef.current = text;
   });
 
+  // 可直接使用useMemo缓存组件
+
   const handleSubmit = useCallback(() => {
     const currentText = textRef.current;
     alert(currentText);

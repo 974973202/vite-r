@@ -58,6 +58,10 @@ const routes: Array<RouteType> = [
         path: '/bytemd',
         component: lazy(() => import('./page/bytemd')),
       },
+      {
+        path: '/canvas/dynamic-logo',
+        component: lazy(() => import('./page/canvas/dynamic-logo')),
+      },
     ],
   },
 ];

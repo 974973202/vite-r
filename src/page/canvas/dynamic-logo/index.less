@@ -1,0 +1,103 @@
+@url-prefix: '../../../src/assets';
+* {
+  cursor: url('@{url-prefix}/mouse.png') 4 4, default;
+  padding: 0;
+  margin: 0;
+}
+#pointer {
+  transform: translate3d(-50%, -50%, 0px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  transition-property: opacity, background-color, left, top, width, height;
+  transition-duration: 0.3s, 0.3s, 0.1s, 0.1s, 0.3s, 0.3s;
+  z-index: 2;
+  pointer-events: none;
+}
+#pointer.hidden {
+  opacity: 0;
+}
+#pointer.hover {
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgb(116, 116, 116); */
+  background-color: #000;
+}
+
+.canvas-container {
+  margin-top: 50px;
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  canvas {
+    margin: auto;
+  }
+}
+
+.logo-options-container {
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 5vw;
+  display: flex;
+  justify-content: space-around;
+  max-width: 80vw;
+  height: 15vw;
+  border-radius: 8px;
+  // border: 1px solid #614949;
+  background-color: rgba(0, 0, 0, 0.4);
+  list-style-type: none;
+  transition: 0.16s linear;
+  user-select: none;
+
+  .logo-item {
+    padding: 15px;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    transition: 0.3s linear;
+
+    .item-picture {
+      height: 90%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .item-desc {
+      flex: 1;
+      color: #eee;
+      text-transform: capitalize;
+    }
+
+    .logo-item.active {
+      transition: 0.3s linear;
+      background-color: rgb(116, 116, 116);
+      // background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  box-shadow: 0px 0px 5px #614949;
+
+  :hover {
+    transition: 0.16s linear;
+  }
+}

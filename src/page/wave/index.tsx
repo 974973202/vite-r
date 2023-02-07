@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import './index.less';
 
 function Wave() {
-  const [container, setContainer] = useState();
-  const [containerWidth, setContainerWidth] = useState();
+  const [container, setContainer] = useState<any>();
+  const [containerWidth, setContainerWidth] = useState<any>();
   const number = 8; // 自定义产生几个水波纹
   let index = 0; // 定义每次点击产生的波纹的层级
 
@@ -17,7 +17,12 @@ function Wave() {
     setContainerWidth(containerWidth);
   }, []);
 
-  function addWave(e, parentNode, number, index) {
+  function addWave(
+    e: any,
+    parentNode: { appendChild: (arg0: HTMLDivElement) => void },
+    number: number,
+    index: number
+  ) {
     // 渲染完波纹后插入父级， 传入波纹数， 点击的坐标x, y ，层级
     parentNode.appendChild(renderWave(number, e.pageX, e.pageY, index));
 
@@ -27,7 +32,7 @@ function Wave() {
   }
 
   // 渲染波纹的函数
-  function renderWave(number, x, y, z) {
+  function renderWave(number: number, x: number, y: number, z: number) {
     console.log(number, x, y, z, containerWidth);
 
     let childrenNode = '';
@@ -51,7 +56,13 @@ function Wave() {
     return childrenContainer;
   }
 
-  function removeWave(parentNode, index) {
+  function removeWave(
+    parentNode: {
+      appendChild?: (arg0: HTMLDivElement) => void;
+      removeChild?: any;
+    },
+    index: number
+  ) {
     // 延迟3秒删除波纹
     setTimeout(() => {
       const node = document.getElementsByClassName(`remove${index}`)[0];

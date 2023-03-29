@@ -62,6 +62,10 @@ const routes: Array<RouteType> = [
         path: '/canvas/dynamic-logo',
         component: lazy(() => import('./page/canvas/dynamic-logo')),
       },
+      {
+        path: '/three',
+        component: lazy(() => import('./page/three')),
+      },
     ],
   },
 ];

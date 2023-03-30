@@ -2,6 +2,7 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import StylePrismjs from './prismjs';
 import OmsSyntaxHighlight from './react-syntax-highlighter';
 import { styleText, isPc } from './prismjs-text';
+import Heart from './heart';
 
 const interval = 50;
 
@@ -51,9 +52,10 @@ function Prismjs() {
 
   return (
     <div>
-      <OmsSyntaxHighlight textContent={CODE} language="jsx" />
+      {/* <OmsSyntaxHighlight textContent={CODE} language="jsx" /> */}
       <div style={{ display: isPc ? 'flex' : '' }}>
         <StylePrismjs ref={saveStyleEditorRef} code={currentStyleCode} />
+        <Heart />
       </div>
     </div>
   );

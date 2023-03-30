@@ -27,7 +27,11 @@ function StyleEditor(props: { code: any }, _ref: any) {
   );
 
   return (
-    <div ref={saveRef} className="styleEditor">
+    <div
+      ref={saveRef}
+      style={{ overflowAnchor: 'none', paddingBottom: 50 }}
+      className="styleEditor"
+    >
       <style dangerouslySetInnerHTML={{ __html: code }}></style>
       <pre dangerouslySetInnerHTML={{ __html: highlightCode }}></pre>
     </div>

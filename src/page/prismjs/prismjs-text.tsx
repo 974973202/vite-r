@@ -47,7 +47,7 @@ export const styleText = [
   ${
     isPc
       ? `width: 48vw;
-    height: 96vh;`
+    height: 80vh;`
       : `width: 96vw;
     height: 48vh;`
   }
@@ -123,7 +123,7 @@ export const styleText = [
   ${
     isPc
       ? `width: 48vw;
-    height: 96vh;`
+    height: 80vh;`
       : `width: 96vw;
     height: 48vh;`
   }

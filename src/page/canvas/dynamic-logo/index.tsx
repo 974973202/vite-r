@@ -7,12 +7,12 @@ import './index.less';
 const logos = [
   {
     label: 'kazimierz',
-    url: '/src/page/canvas/dynamic-logo/logo_kazimierz.png',
+    url: '/src/assets/img/logo_kazimierz.png',
   },
-  { label: 'rhine', url: '/src/page/canvas/dynamic-logo/logo_rhine.png' },
-  { label: 'rhodes', url: '/src/page/canvas/dynamic-logo/logo_rhodes.png' },
-  { label: 'victoria', url: '/src/page/canvas/dynamic-logo/logo_victoria.png' },
-  { label: 'yan', url: '/src/page/canvas/dynamic-logo/logo_yan.png' },
+  { label: 'rhine', url: '/src/assets/img/logo_rhine.png' },
+  { label: 'rhodes', url: '/src/assets/img/logo_rhodes.png' },
+  { label: 'victoria', url: '/src/assets/img/logo_victoria.png' },
+  { label: 'yan', url: '/src/assets/img/logo_yan.png' },
 ];
 
 /** 存储由logos生成的logoImg对象 */

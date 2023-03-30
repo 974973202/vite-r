@@ -2,7 +2,7 @@ import './index.less';
 
 function Css() {
   return (
-    <>
+    <div className="wrapper">
       <p>Emilia</p>
       <div className="card">
         <div className="snow"></div>
@@ -106,7 +106,7 @@ function Css() {
         <div className="snow"></div>
         <div className="snow"></div>
       </div>
-    </>
+    </div>
   );
 }
 

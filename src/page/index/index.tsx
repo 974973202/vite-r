@@ -18,6 +18,7 @@ function Index() {
       <Link to="/bytemd">bytemd</Link>
       <Link to="/canvas/dynamic-logo">dynamic-logo</Link>
       <Link to="/text-styles">text-styles</Link>
+      <Link to="/handsontable">handsontable</Link>
     </div>
   );
 }

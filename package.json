@@ -17,10 +17,13 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@babel/polyfill": "^7.12.1",
     "@bytemd/plugin-gfm": "^1.17.4",
     "@bytemd/plugin-highlight-ssr": "^1.17.2",
     "@bytemd/react": "^1.17.2",
+    "@handsontable/react": "^8.4.0",
     "antd": "^4.23.0",
+    "handsontable": "6.2.2",
     "juejin-markdown-themes": "^1.29.5",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",

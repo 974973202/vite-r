@@ -78,6 +78,10 @@ const routes: Array<RouteType> = [
         path: '/text-styles',
         component: lazy(() => import('./page/text-styles')),
       },
+      {
+        path: '/handsontable',
+        component: lazy(() => import('./page/handsontable')),
+      },
     ],
   },
 ];

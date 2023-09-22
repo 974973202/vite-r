@@ -88,11 +88,6 @@ export const routesPath: Array<RouteType> = [
         component: lazy(() => import('./page/text-styles')),
       },
       {
-        path: '/handsontable',
-        label: 'handsontable',
-        component: lazy(() => import('./page/handsontable')),
-      },
-      {
         path: '/await-test',
         label: 'awaitTest',
         disabled: true,

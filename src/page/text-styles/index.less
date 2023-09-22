@@ -1,0 +1,15 @@
+.text {
+  font-size: 50px;
+  letter-spacing: -25px;
+  animation: showup 5s linear infinite alternate-reverse;
+}
+
+@keyframes showup {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    letter-spacing: 10px;
+    filter: blur(0.5);
+  }
+}

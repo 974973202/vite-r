@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { LogoImg } from './logo-img';
 import { ParticleCanvas } from './particle-canvas';
-import './index.less';
+import styles from './index.module.less';
 
 // 准备logo数据
 const logos = [
@@ -62,23 +62,23 @@ function DynamicLogo() {
   }, []);
 
   return (
-    <div className="bg">
-      <div id="pointer"></div>
-      <div className="canvas-container">
+    <div className={styles['bg']}>
+      <div className={styles['pointer']} id="pointer"></div>
+      <div className={styles['canvas-container']}>
         <canvas ref={canvas} width="400" height="400"></canvas>
       </div>
-      <ul className="logo-options-container">
+      <ul className={styles['logo-options-container']}>
         {logoImgs.map((item: LogoImg) => {
           return (
             <li
               key={item.src}
-              className={`logo-item`}
+              className={styles['logo-item']}
               // 激活logo
               onClick={() => particleCanvas.current?.changeImg(item)}
               data-cursor="pointer"
             >
-              <img src={item.src} className="item-picture" />
-              <div className="item-desc">{item.name}</div>
+              <img src={item.src} className={styles['item-picture']} />
+              <div className={styles['item-desc']}>{item.name}</div>
             </li>
           );
         })}

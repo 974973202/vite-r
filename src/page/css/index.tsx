@@ -1,110 +1,15 @@
-import './index.less';
+import styles from './index.module.less';
 
 function Css() {
+  const mapArr = new Array(100).fill(null);
+
   return (
-    <div className="wrapper">
-      <p>Emilia</p>
-      <div className="card">
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
-        <div className="snow"></div>
+    <div className={styles['wrapper']}>
+      <p>liangzx</p>
+      <div className={styles['card']}>
+        {mapArr.map((ele, index) => (
+          <div key={index} className={styles['snow']}></div>
+        ))}
       </div>
     </div>
   );

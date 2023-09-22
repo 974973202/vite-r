@@ -54,7 +54,11 @@ const ColorAnimateTextComponent = forwardRef<any, Partial<InputParam>>(
       };
     }, []);
 
-    return <div ref={container}></div>;
+    return (
+      <>
+        <div ref={container}></div>
+      </>
+    );
   }
 );
 

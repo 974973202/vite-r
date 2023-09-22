@@ -1,10 +1,8 @@
 @url-prefix: '/static';
-* {
-  cursor: url('@{url-prefix}/mouse.png') 4 4, default;
-  padding: 0;
-  margin: 0;
-}
-#pointer {
+// * {
+
+// }
+.pointer {
   transform: translate3d(-50%, -50%, 0px);
   position: fixed;
   top: 0;
@@ -18,10 +16,10 @@
   z-index: 2;
   pointer-events: none;
 }
-#pointer.hidden {
+.pointer.hidden {
   opacity: 0;
 }
-#pointer.hover {
+.pointer.hover {
   width: 24px;
   height: 24px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -32,16 +30,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 232px);
+  height: calc(100vh - 112px);
   /* background-color: rgb(116, 116, 116); */
   background-color: #000;
+  cursor: url('@{url-prefix}/mouse.png') 4 4, default;
+  padding: 0;
+  margin: 0;
 }
 
 .canvas-container {
-  margin-top: 50px;
   display: flex;
-  width: 100vw;
+  width: calc(100vw - 232px);
   height: 50vh;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.4);

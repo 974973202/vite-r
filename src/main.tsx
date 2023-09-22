@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import RenderRoutes from './router';
+import './normalize.css';
+import './scrollbar.css';
 
 const Root = () => (
   <BrowserRouter>

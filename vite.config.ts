@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteEslint from 'vite-plugin-eslint';
-import { createStyleImportPlugin, AntdResolve } from 'vite-plugin-style-import';
 import { prismjsPlugin } from 'vite-plugin-prismjs';
-import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,20 +10,16 @@ export default defineConfig({
     viteEslint({
       failOnError: false,
     }),
-    createStyleImportPlugin({
-      resolves: [AntdResolve()],
-    }),
     prismjsPlugin({
       languages: ['css'],
       //  languages: 'all',
     }),
   ],
-  resolve: {
-    alias: {
-      '~antd': path.resolve(__dirname, './node_modules/antd'),
-    },
-  },
   css: {
+    // modules: {
+    //   generateScopedName: '[name]__[local]__[hash:base64:5]',
+    //   hashPrefix: 'predix',
+    // },
     preprocessorOptions: {
       less: {
         javascriptEnabled: true, // 支持内联 JavaScript

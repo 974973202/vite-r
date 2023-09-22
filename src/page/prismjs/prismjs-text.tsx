@@ -31,27 +31,22 @@ export const styleText = [
   * {
     -webkit-transition: all .5s;
     transition: all .5s;
-    /* 重置一下浏览器默认属性 */
-    padding: 0;
-    margin: 0;
   }
   /* 白色背景太单调了。来点背景 */
-  body, html {
+  .styleEditor {
     color: #fff;
     background-color: darkslategray;
-  }
-  
-  /* 文字太近了 */
-  .styleEditor {
     overflow: auto;
   ${
     isPc
       ? `width: 48vw;
-    height: 80vh;`
+    height: calc(100vh - 112px);`
       : `width: 96vw;
     height: 48vh;`
   }
     border: 1px solid;
+  /* 文字太近了，我们来调一下 */
+
     font-size: 14px;
     line-height: 1.5;
     padding: 10px;
@@ -65,7 +60,7 @@ export const styleText = [
   .token.comment{ color: rgb(177,177,177) }
   
   /* 加个 3D 效果 */
-  html {
+  .wrapper {
     perspective: 1000px;
     -webkit-perspective: 1000px;
   }
@@ -86,34 +81,6 @@ export const styleText = [
   }
   }
   
-  /* 谷歌浏览器滚动条好像有点丑，我们来改下滚动条样式 */
-  ::-webkit-scrollbar {
-    width: 8px; /* 对垂直流动条有效 */
-    height: 8px; /* 对水平流动条有效 */
-  }
-  
-  /* 定义滚动条的轨道颜色、内阴影及圆角 */
-  ::-webkit-scrollbar-track{
-    background-color: #F7FAFE;
-  }
-  
-  /* 定义滑块颜色、内阴影及圆角 */
-  ::-webkit-scrollbar-thumb{
-    height: 8px;
-    background-color: #C2C6CE;
-    border-radius: 10px;
-  }
-  
-  /* 定义两端按钮的样式 */
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
-  
-  /* 定义右下角汇合处的样式 */
-  ::-webkit-scrollbar-corner {
-    background:#F7FAFE;
-  }
-  
   /*
   * 用代码画一个爱心。
   */
@@ -123,7 +90,7 @@ export const styleText = [
   ${
     isPc
       ? `width: 48vw;
-    height: 80vh;`
+    height: calc(100vh - 112px);`
       : `width: 96vw;
     height: 48vh;`
   }
@@ -131,12 +98,6 @@ export const styleText = [
     border: 1px solid;
     background-color: white;
   ${
-    isPc
-      ? `transform: rotateY(-10deg) translateZ(-100px);
-  -webkit-transform: rotateY(-10deg) translateZ(-100px);`
-      : `transform: rotateX(10deg) translateZ(-100px);
-  -webkit-transform: rotateX(10deg) translateZ(-100px);`
-  }${
     isPc
       ? ''
       : `

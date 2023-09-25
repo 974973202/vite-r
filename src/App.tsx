@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import React, { useLayoutEffect, useState } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
@@ -10,6 +10,7 @@ const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [routerKey, setRouterKey] = useState(['/prismjs']);
   const navigate = useNavigate();
+  const pathname = useLocation().pathname;
 
   const {
     token: { colorBgContainer },
@@ -23,8 +24,13 @@ const App: React.FC = () => {
     }));
 
   useLayoutEffect(() => {
-    navigate('/prismjs');
-  }, []);
+    if (pathname) {
+      navigate(pathname);
+      setRouterKey([pathname]);
+    }
+  }, [pathname]);
+
+  // console.log(location, 'location');
 
   return (
     <Layout>

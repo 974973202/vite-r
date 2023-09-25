@@ -18,6 +18,12 @@ export class LogoImg {
       const tmp_canvas = document.createElement('canvas'); // 创建一个空的canvas
       const tmp_ctx = tmp_canvas.getContext('2d');
       const imgW = 400;
+      /**
+       * 使用位运算符（~~）将计算结果舍去小数部分，得到最终的图片高度。
+       * 这种使用位运算符进行取整的方式相对于使用Math.floor()或Math.round()等函数更加高效。
+       * 位运算符会直接截断小数部分，不需要进行浮点数运算，因此可以提高性能
+       * 这种取整方式只适用于正数
+       */
       const imgH = ~~(400 * (img.height / img.width));
       tmp_canvas.width = imgW;
       tmp_canvas.height = imgH;

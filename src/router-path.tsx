@@ -79,7 +79,6 @@ export const routesPath: Array<RouteType> = [
       {
         path: '/three',
         label: 'three',
-        disabled: true,
         component: lazy(() => import('./page/three')),
       },
       {

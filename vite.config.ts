@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteEslint from 'vite-plugin-eslint';
 import { prismjsPlugin } from 'vite-plugin-prismjs';
+import postcssPresetEnv from 'postcss-preset-env';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,6 +25,9 @@ export default defineConfig({
       less: {
         javascriptEnabled: true, // 支持内联 JavaScript
       },
+    },
+    postcss: {
+      plugins: [postcssPresetEnv()], // 可以直接写postcssPresetEnv 不要任何配置
     },
   },
   build: {

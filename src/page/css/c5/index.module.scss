@@ -1,0 +1,78 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+$count: 400;
+$sqrt: 20;
+$per: 10%;
+$width: 300px;
+$perWid: 15;
+
+@for $i from 1 to ($count + 1) {
+  @property --m-#{$i} {
+    syntax: '<number>';
+    initial-value: 1;
+    inherits: false;
+  }
+}
+
+@function bgSet($n) {
+  $bg: radial-gradient(rgba(0, 0, 0, var(--m-1)), rgba(0, 0, 0, var(--m-1)));
+
+  @for $i from 2 through $n {
+    $bg: $bg,
+      radial-gradient(
+        rgba(0, 0, 0, var(--m-#{$i})),
+        rgba(0, 0, 0, var(--m-#{$i}))
+      );
+  }
+
+  @return $bg;
+}
+
+@function positionSet($n) {
+  $bgPosition: ();
+
+  @for $i from 0 through ($n) {
+    @for $j from 0 through ($n - 1) {
+      $bgPosition: $bgPosition, #{$i * $perWid}px #{$j * $perWid}px;
+    }
+  }
+
+  @return $bgPosition;
+}
+
+@function transitionSet($n) {
+  $transition: --m-1 0.1s 0.1s;
+
+  @for $i from 1 through $n {
+    $transition: $transition, --m-#{$i} #{random(500)}ms #{random(500)}ms;
+  }
+
+  @return $transition;
+}
+
+.box {
+  width: $width;
+  height: $width;
+  background: url('/static/css/css5.jpg');
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  margin: auto;
+}
+
+.box {
+  mask: bgSet($count);
+  mask-size: $per $per;
+  mask-repeat: no-repeat;
+  mask-position: positionSet($sqrt);
+  transition: transitionSet($count);
+  &:hover {
+    @for $i from 1 through $count {
+      --m-#{$i}: 0;
+    }
+  }
+}

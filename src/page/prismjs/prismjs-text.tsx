@@ -8,14 +8,7 @@ export const isPc = (function () {
     'iPad',
     'iPod',
   ];
-  let flag = true;
-  for (let v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
-      break;
-    }
-  }
-  return flag;
+  return !Agents.some(agent => userAgentInfo.indexOf(agent) > -1);
 })();
 
 export const styleText = [

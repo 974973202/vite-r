@@ -65,7 +65,7 @@ function DynamicLogo() {
     <div className={styles['bg']}>
       <div className={styles['pointer']} id="pointer"></div>
       <div className={styles['canvas-container']}>
-        <canvas ref={canvas} width="400" height="400"></canvas>
+        <canvas ref={canvas} width="500" height="500"></canvas>
       </div>
       <ul className={styles['logo-options-container']}>
         {logoImgs.map((item: LogoImg) => {

@@ -23,6 +23,8 @@ module.exports = {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'react/display-name': 'off',
+    '@typescript-eslint/no-explicit-any': ['warn'],
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
   settings: {
     react: {

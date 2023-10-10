@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
@@ -18,19 +16,6 @@ let points: any,
 
 function Three() {
   useEffect(() => {
-    // const container = document.getElementById('three');
-    // const renderer = new THREE.WebGLRenderer();
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    // container.appendChild(renderer.domElement);
-    // const camera = new THREE.PerspectiveCamera(
-    //   45,
-    //   window.innerWidth / window.innerHeight,
-    //   1,
-    //   500
-    // );
-    // camera.position.set(0, 0, 100);
-    // camera.lookAt(0, 0, 0);
-    // const scene = new THREE.Scene();
     init();
     animate();
   }, []);
@@ -103,6 +88,9 @@ function Three() {
 
   const init = () => {
     const container = document.getElementById('container');
+    // 场景
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x050505);
 
     //相机
     camera = new THREE.PerspectiveCamera(
@@ -118,9 +106,6 @@ function Three() {
       camera.position.set(200, 200, 200);
     }
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-    // 场景
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x050505);
 
     //渲染器
     renderer = new THREE.WebGLRenderer();
@@ -178,7 +163,7 @@ function Three() {
       // 对每个模型做一些简单形变
       for (let i = 0; i < textGeometryList.length; i++) {
         textGeometryList[i].geometry.scale(100, 100, 100);
-        textGeometryList[i].geometry.rotateX(Math.PI / 4);
+        textGeometryList[i].geometry.rotateX(Math.PI / 5);
         textGeometryList[i].geometry.rotateY(Math.PI / 4);
       }
       //模型加载后立即执行动画
@@ -212,12 +197,8 @@ function Three() {
     TWEEN.update();
     requestAnimationFrame(animate);
 
-    render();
-    stats.update();
-  }
-
-  function render() {
     renderer.render(scene, camera);
+    stats.update();
   }
 
   return (

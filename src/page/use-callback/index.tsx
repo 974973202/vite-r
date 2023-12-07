@@ -30,6 +30,11 @@ function UseRefDemof() {
     alert(currentText);
   }, [textRef]);
 
+  // const handleSubmit = () => {
+  //   const currentText = textRef.current;
+  //   alert(currentText);
+  // };
+
   return (
     <>
       <span>父组件：</span>

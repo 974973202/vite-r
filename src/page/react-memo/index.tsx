@@ -32,9 +32,9 @@ function Parent() {
   const handleClick = useCallback(() => {
     setTxt(txt + 1);
   }, [txt]);
-  //   const handleClick = () => {
-  //     setTxt(txt + 1);
-  //   };
+  // const handleClick = () => {
+  //   setTxt(txt + 1);
+  // };
 
   // 3. 使用useMemo缓存组件， 让T只渲染一次
   const BTest = useMemo(() => {

@@ -2,7 +2,7 @@ import { lazy, LazyExoticComponent } from 'react';
 
 export type RouteType = {
   path?: string;
-  component: LazyExoticComponent<any>;
+  component?: LazyExoticComponent<any>;
   children?: RouteType[];
   caseSensitive?: boolean; // 路径大小写敏感属性，默认是不敏感
   index?: boolean;
@@ -39,16 +39,20 @@ export const routesPath: Array<RouteType> = [
         component: lazy(() => import('./page/drag')),
       },
       {
-        path: '/react-memo',
-        label: 'react-memo',
-        disabled: true,
-        component: lazy(() => import('./page/react-memo')),
-      },
-      {
-        path: '/use-callback',
-        label: 'use-callback',
-        disabled: true,
-        component: lazy(() => import('./page/use-callback')),
+        path: '/react',
+        label: 'react',
+        children: [
+          {
+            path: '/react/react-memo',
+            label: 'react-memo',
+            component: lazy(() => import('./page/react-memo')),
+          },
+          {
+            path: '/react/use-callback',
+            label: 'use-callback',
+            component: lazy(() => import('./page/use-callback')),
+          },
+        ],
       },
       {
         path: '/wave',

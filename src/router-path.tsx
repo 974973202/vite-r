@@ -97,6 +97,11 @@ export const routesPath: Array<RouteType> = [
         component: lazy(() => import('./page/await-test')),
       },
       {
+        path: '/export-xlsx',
+        label: 'export-xlsx',
+        component: lazy(() => import('./page/export-xlsx')),
+      },
+      {
         path: '*',
         component: lazy(() => import('./page/404')),
       },

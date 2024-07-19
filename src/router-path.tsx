@@ -102,6 +102,11 @@ export const routesPath: Array<RouteType> = [
         component: lazy(() => import('./page/export-xlsx')),
       },
       {
+        path: '/framer-motion',
+        label: 'framer-motion',
+        component: lazy(() => import('./page/framer-motion')),
+      },
+      {
         path: '*',
         component: lazy(() => import('./page/404')),
       },

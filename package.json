@@ -13,7 +13,7 @@
   "lint-staged": {
     "*.{jsx,tsx,ts}": "eslint --fix"
   },
-  "import": {}, 
+  "import": {},
   "dependencies": {
     "@ant-design/icons": "4.7.0",
     "@babel/polyfill": "7.12.1",
@@ -21,6 +21,7 @@
     "@bytemd/plugin-highlight-ssr": "1.17.2",
     "@bytemd/react": "1.17.2",
     "antd": "^5.2.0",
+    "framer-motion": "^11.3.7",
     "juejin-markdown-themes": "1.29.5",
     "prismjs": "1.29.0",
     "react": "18.2.0",
@@ -28,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.16.0",
     "react-syntax-highlighter": "15.5.0",
+    "styled-components": "^6.1.12",
     "three": "0.150.1",
     "xlsx": "file:./shared/xlsx"
   },

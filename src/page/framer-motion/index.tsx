@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useCycle } from 'framer-motion';
 
 const Container = styled.div`
   position: fixed;
@@ -24,18 +24,20 @@ const Ball = styled(motion.div)`
 
 const variants = {
   open: {
-    width: 100,
-    height: 100,
+    opacity: 1,
+    // width: 100,
+    // height: 100,
     // transform: {
     //   scale: 1.2,
     // },
     transition: {
-      duration: 0.3,
+      duration: 0.5,
     },
   },
   closed: {
-    width: 50,
-    height: 50,
+    opacity: 0,
+    // width: 50,
+    // height: 50,
     // transform: {
     //   scale: 1,
     // },
@@ -53,17 +55,13 @@ const positions = {
 };
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen, setIsOpen] = useCycle(false, true);
 
   return (
     <Container>
       <AnimatePresence>
         {isOpen && (
-          <>
+          <div>
             {Object.entries(positions).map(([key, value]) => (
               <Ball
                 key={key}
@@ -75,21 +73,34 @@ const App = () => {
                   position: 'absolute',
                   top: '50%',
                   left: '50%',
+
                   transform: `translate(-50%, -50%) translate(${value.x}px, ${value.y}px)`,
                 }}
               >
                 {key}
               </Ball>
             ))}
-          </>
+          </div>
         )}
       </AnimatePresence>
       <Ball
-        variants={variants}
+        // variants={variants}
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
-        onHoverStart={handleClick}
-        onHoverEnd={handleClick}
+        onClick={setIsOpen}
+        drag
+        dragConstraints={{
+          top: -50,
+          left: -50,
+          right: 50,
+          bottom: 50,
+        }}
+        // whileHover={{ scale: 1.2, rotate: 90 }}
+        // whileTap={{
+        //   scale: 0.8,
+        //   rotate: -90,
+        //   borderRadius: '100%',
+        // }}
       >
         Click me
       </Ball>
